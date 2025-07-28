@@ -20,6 +20,6 @@ public class PublisherResponse {
     private String address ;
 
 
-    private List<Book> books = new ArrayList<>();
+    private List<Integer> booksId = new ArrayList<>();
 }
 

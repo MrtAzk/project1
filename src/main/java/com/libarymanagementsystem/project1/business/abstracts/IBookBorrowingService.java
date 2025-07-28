@@ -11,7 +11,7 @@ public interface IBookBorrowingService {
 
     Page<BookBorrowing> cursor (int page , int pageSize);
 
-    BookBorrowing update(Author author);
+    BookBorrowing update(BookBorrowing bookBorrowing);
 
     boolean delete(int id);
 }

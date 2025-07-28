@@ -21,7 +21,7 @@ public class Category {
     private  int id;
 
     @Column(name = "category_name")
-    private String categoryName;
+    private String name;
 
     @Column(name = "category_description")
     private String description;
