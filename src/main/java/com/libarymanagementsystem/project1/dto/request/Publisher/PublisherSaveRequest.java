@@ -21,5 +21,4 @@ public class PublisherSaveRequest {
 
     private String address ;
 
-    private List<Integer> booksId = new ArrayList<>();
 }

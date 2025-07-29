@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -19,9 +19,6 @@ public class BookBorrowingSaveRequest {
     @NotNull(message = "Kiralıyan Kişi Mail Adresi Girmek Zorundadır")
     private  String borrowerEmail;
 
-
-    @NotNull(message = "Kitap İade Tarihi Giriniz")
-    private LocalDate returnDate;
 
     @Positive
     @NotNull

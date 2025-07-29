@@ -10,6 +10,8 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+
 @Service
 public class BookBorrowingManager implements IBookBorrowingService {
     private  final BookBorrowingRepo bookBorrowingRepo;
@@ -36,8 +38,9 @@ public class BookBorrowingManager implements IBookBorrowingService {
 
     @Override
     public BookBorrowing update(BookBorrowing bookBorrowing) {
-        this.get(bookBorrowing.getId());
-        return this.save(bookBorrowing);
+        BookBorrowing bookBorrowing1 =this.get(bookBorrowing.getId());
+        bookBorrowing1.setReturnDate(LocalDate.now());
+        return this.save(bookBorrowing1);
     }
 
     @Override

@@ -13,6 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 public class CategoryResponse {
 
+    private String id;
     private String name;
     private String description;
     private List<Integer> booksId = new ArrayList<>();

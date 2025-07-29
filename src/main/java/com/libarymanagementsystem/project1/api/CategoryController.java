@@ -61,7 +61,7 @@ public class CategoryController {
 
         Page<Category> categories=this.categoryService.cursor(page,pageSize);
 
-        Page<CategoryResponse> categoryResponsePage =categories.map(book -> this.modelMapper.forResponse().map(categories, CategoryResponse.class));
+        Page<CategoryResponse> categoryResponsePage =categories.map(category-> this.modelMapper.forResponse().map(category, CategoryResponse.class));
 
         return CreateResult.cursor(categoryResponsePage);
 

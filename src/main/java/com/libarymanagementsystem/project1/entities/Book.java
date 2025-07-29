@@ -1,9 +1,7 @@
 package com.libarymanagementsystem.project1.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -31,6 +29,7 @@ public class Book {
     // Bir kitap bir yazara ait (ManyToOne)
     @ManyToOne
     @JoinColumn(name = "author_id") // foreign key
+
     private Author author;
 
     // Bir kitap bir yayınevine ait (ManyToOne)

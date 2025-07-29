@@ -9,7 +9,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AuthorSaveRequest {
-    @NotNull(message = "Book boş veya null olamaz")
+    @NotNull(message = "Yazar İsmi boş veya null olamaz")
 
     private String name;
+
+    private int birthDate;
+
+    private String country;
 }

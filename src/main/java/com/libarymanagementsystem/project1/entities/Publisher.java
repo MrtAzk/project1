@@ -1,9 +1,7 @@
 package com.libarymanagementsystem.project1.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +28,7 @@ public class Publisher {
     private String address ;
 
     // Bir yayınevinin birden fazla kitabı olabilir (OneToMany)
+
     @OneToMany(mappedBy = "publisher", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Book> books = new ArrayList<>();
 }
