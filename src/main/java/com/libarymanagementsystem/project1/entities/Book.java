@@ -1,5 +1,6 @@
 package com.libarymanagementsystem.project1.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -48,5 +49,6 @@ public class Book {
 
     // Bir kitap birden fazla ödünç almaya sahip (OneToMany)
     @OneToMany(mappedBy = "book", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private List<BookBorrowing> borrowings = new ArrayList<>();
 }

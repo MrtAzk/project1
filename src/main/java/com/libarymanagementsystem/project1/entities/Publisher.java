@@ -1,5 +1,6 @@
 package com.libarymanagementsystem.project1.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -30,5 +31,6 @@ public class Publisher {
     // Bir yayınevinin birden fazla kitabı olabilir (OneToMany)
 
     @OneToMany(mappedBy = "publisher", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private List<Book> books = new ArrayList<>();
 }

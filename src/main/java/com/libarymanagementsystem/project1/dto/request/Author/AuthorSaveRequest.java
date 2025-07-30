@@ -13,7 +13,9 @@ public class AuthorSaveRequest {
 
     private String name;
 
+    @NotNull(message = "Doğum yılı boş olamaz")
     private int birthDate;
 
+    @NotNull(message = "Ülke bilgisi boş olamaz")
     private String country;
 }

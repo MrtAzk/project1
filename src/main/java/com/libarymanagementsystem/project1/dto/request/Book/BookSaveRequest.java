@@ -2,6 +2,7 @@ package com.libarymanagementsystem.project1.dto.request.Book;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Past;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,6 +23,7 @@ public class BookSaveRequest {
     private String name;
 
     @NotNull(message = "Yayın yılı boş olamaz")
+    @Past(message = "Yayın tarihi gelecek olamaz")
     private LocalDate publicationYear; // veya Integer year
 
     @NotNull

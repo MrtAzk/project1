@@ -1,5 +1,6 @@
 package com.libarymanagementsystem.project1.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -27,5 +28,6 @@ public class Category {
     private String description;
     // Bir kategori birden fazla kitaba sahip (ManyToMany)
     @ManyToMany(mappedBy = "categories") // Book tarafındaki field adı
+    @JsonIgnore
     private List<Book> books = new ArrayList<>();
 }

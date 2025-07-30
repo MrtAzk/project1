@@ -24,7 +24,7 @@ public class BookBorrowing {
     @Column(name = "borrower_email",nullable = false)
     private  String borrowerEmail;
 
-    @Column(name = "borrowing_date",nullable = false)
+    @Column(name = "borrowing_date")
     private LocalDate borrowingDate;
 
     @Column(name = "return_date",nullable = true)

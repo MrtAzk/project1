@@ -1,5 +1,6 @@
 package com.libarymanagementsystem.project1.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -23,8 +24,12 @@ public class Author {
     @Column(name = "author_birtdate",nullable = false)
     private int birthDate;
 
+    @Column(name = "author_country",nullable = false)
+    private String country;
+
 
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private List<Book> books = new ArrayList<>();
 
 }
