@@ -38,9 +38,9 @@ public class BookBorrowingManager implements IBookBorrowingService {
 
     @Override
     public BookBorrowing update(BookBorrowing bookBorrowing) {
-        BookBorrowing bookBorrowing1 =this.get(bookBorrowing.getId());
-        bookBorrowing1.setReturnDate(LocalDate.now());
-        return this.save(bookBorrowing1);
+        this.get(bookBorrowing.getId());
+        bookBorrowing.setReturnDate(LocalDate.now());
+        return this.save(bookBorrowing);
     }
 
     @Override

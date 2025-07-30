@@ -59,7 +59,7 @@ public class BookController {
 
         List<Category> categories = new ArrayList<>();
         for (Integer categoryId :bookSaveRequest.getCategoriesId()){
-            Category category = categoryService.get(categoryId);
+            Category category = this.categoryService.get(categoryId);
             categories.add(category);
         }
         saveBook.setCategories(categories);

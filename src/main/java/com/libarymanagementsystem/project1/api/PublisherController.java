@@ -55,7 +55,7 @@ public class PublisherController {
 
         Page<Publisher> publishers = this.publisherService.cursor(page, pageSize);
 
-        Page<PublisherResponse> publisherResponsePage = publishers.map(publisher -> this.modelMapper.forResponse().map(publishers, PublisherResponse.class));
+        Page<PublisherResponse> publisherResponsePage = publishers.map(publisher -> this.modelMapper.forResponse().map(publisher, PublisherResponse.class));
 
         return CreateResult.cursor(publisherResponsePage);
 
