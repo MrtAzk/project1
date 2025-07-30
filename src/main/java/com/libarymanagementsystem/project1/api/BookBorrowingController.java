@@ -17,6 +17,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.time.LocalDate;
 
 @RestController
 @RequestMapping("/v1/bookborrowings")
@@ -41,6 +42,7 @@ public class BookBorrowingController {
 
         Book book =this.bookService.get(bookBorrowingSaveRequest.getBookId());
         saveBookBorrowing.setBook(book);
+        saveBookBorrowing.setBorrowingDate(LocalDate.now());
         this.bookBorrowingService.save(saveBookBorrowing);
 
         BookBorrowingResponse bookBorrowingResponse =this.modelMapper.forResponse().map(saveBookBorrowing,BookBorrowingResponse.class);

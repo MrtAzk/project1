@@ -30,12 +30,13 @@ public class Book {
     // Bir kitap bir yazara ait (ManyToOne)
     @ManyToOne
     @JoinColumn(name = "author_id") // foreign key
-
+    @JsonIgnore
     private Author author;
 
     // Bir kitap bir yayınevine ait (ManyToOne)
     @ManyToOne
     @JoinColumn(name = "publisher_id")
+    @JsonIgnore
     private Publisher publisher;
 
     // Bir kitap birden fazla kategoriye sahip (ManyToMany)
@@ -45,6 +46,7 @@ public class Book {
             joinColumns = @JoinColumn(name = "book_id"),
             inverseJoinColumns = @JoinColumn(name = "category_id")
     )
+    @JsonIgnore
     private List<Category> categories = new ArrayList<>();
 
     // Bir kitap birden fazla ödünç almaya sahip (OneToMany)

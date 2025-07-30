@@ -1,5 +1,6 @@
 package com.libarymanagementsystem.project1.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -27,12 +28,13 @@ public class BookBorrowing {
     @Column(name = "borrowing_date")
     private LocalDate borrowingDate;
 
-    @Column(name = "return_date",nullable = true)
+    @Column(name = "return_date")
     private LocalDate returnDate;
 
     // Bir ödünç alma işlemi bir kitaba ait (ManyToOne)
     @ManyToOne
     @JoinColumn(name = "book_id")
+    @JsonIgnore
     private Book book;
 
 }
